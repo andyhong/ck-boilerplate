@@ -23,13 +23,6 @@ module.exports = {
     {
       resolve: `gatsby-source-filesystem`,
       options: {
-        name: `hub`,
-        path: `${__dirname}/content/hub`,
-      },
-    },
-    {
-      resolve: `gatsby-source-filesystem`,
-      options: {
         name: `config`,
         path: `${__dirname}/content/config`,
       },
@@ -50,7 +43,7 @@ module.exports = {
       options: {
         addPageHeaders: [
           `Cache-Control: no-store`,
-        ], 
+        ],
       },
     },
     {

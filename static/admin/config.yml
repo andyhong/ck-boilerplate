@@ -27,27 +27,6 @@ collections:
           - {label: "Time", name: "time", widget: "string", required: false}
           - {label: "Description", name: "description", widget: "text"}
           - {label: "Link", name: "link", widget: "string"}
-  - name: "hub"
-    label: "Hub"
-    folder: "content/hub"
-    create: true
-    slug: "hub-{{slug}}"
-    editor:
-      preview: false
-    fields:
-      - {label: "Type", name: "type", widget: "hidden", default: "bulletin"}
-      - {label: "Config", name: "config", widget: "string"}
-      - {label: "Title", name: "title", widget: "string"}
-      - {label: "Publish Date", name: "date", widget: "datetime", timeFormat: false}
-      - label: "Events"
-        name: "events"
-        widget: "list"
-        fields:
-          - {label: "Name", name: "name", widget: "string"}
-          - {label: "Date", name: "date", widget: "string", required: false}
-          - {label: "Time", name: "time", widget: "string", required: false}
-          - {label: "Description", name: "description", widget: "text"}
-          - {label: "Link", name: "link", widget: "string"}
   - name: "settings"
     label: "Settings"
     editor:
@@ -75,25 +54,3 @@ collections:
                 widget: "select"
                 options: ["Instagram", "Twitter", "YouTube", "Facebook", "Website"]
               - {label: "Link URL", name: "link", widget: "string"}
-      - label: "Outreach Information"
-        name: "outreach"
-        file: "/content/config/outreach.md"
-        fields:
-          - {label: "Type", name: "type", widget: "hidden", default: "church"}
-          - {label: "Church name", name: "name", widget: "string"}
-          - {label: "Welcome message", name: "message", widget: "text"}
-          - label: "Call to action links"
-            name: "cta"
-            widget: "list"
-            fields:
-              - {label: "Label", name: "label", widget: "string"}
-              - {label: "URL", name: "link", widget: "string"}
-          - label: "Social media links"
-            name: "links"
-            widget: "list"
-            fields:
-              - label: "Link type"
-                name: "type"
-                widget: "select"
-                options: ["Instagram", "Twitter", "YouTube", "Facebook", "Website"]
-              - {label: "Link URL", name: "link", widget: "string"} 

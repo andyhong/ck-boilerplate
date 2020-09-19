@@ -16,13 +16,6 @@ const PagesPage = ({ data }) => {
           <Link key={bulletin.frontmatter.date} to={`/bulletin/${bulletin.frontmatter.date}`}><h3 style={{color: '#FAAE2B'}}>{bulletin.frontmatter.date}</h3></Link>
         ))}
       </div>
-      <div style={divStyle}>
-        <h1>hubs</h1>
-        <p>Here you find a list of all hubs that have been published.</p>
-        {data.allMarkdownRemark.nodes.filter(node => node.frontmatter.type === "hub").map(hub => (
-          <Link key={hub.frontmatter.title} to={`${hub.frontmatter.title}`}><h3 style={{color: '#FAAE2B'}}>{hub.frontmatter.title}</h3></Link>
-        ))}
-      </div>
       <Footer />
     </div>
   )

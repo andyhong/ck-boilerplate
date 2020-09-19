@@ -3,7 +3,7 @@ const path = require('path')
 exports.createPages = ({ graphql, actions }) => {
   const { createPage } = actions
   const bulletinTemplate = path.resolve(`src/templates/bulletin.js`)
-  
+
   return graphql(`
     {
       bulletins: allMarkdownRemark(filter: {frontmatter: {type: {eq: "bulletin"}}}, sort: {fields: [frontmatter___date], order: DESC}) {
@@ -13,18 +13,6 @@ exports.createPages = ({ graphql, actions }) => {
             frontmatter {
               config
               date(formatString: "YYYY-MM-DD")
-            }
-          }
-        }
-      }
-
-      hubs: allMarkdownRemark(filter: {frontmatter: {type: {eq: "hub"}}}) {
-        edges {
-          node {
-            id
-            frontmatter {
-              config
-              title
             }
           }
         }
@@ -40,16 +28,6 @@ exports.createPages = ({ graphql, actions }) => {
       const config = node.frontmatter.config
       createPage({
         path: `/bulletin/${node.frontmatter.date}`,
-        component: bulletinTemplate,
-        context: { id: id, config: config },
-      })
-    })
-
-    res.data.hubs.edges.forEach(({node}) => {
-      const id = node.id
-      const config = node.frontmatter.config
-      createPage({
-        path: `/${node.frontmatter.title}`,
         component: bulletinTemplate,
         context: { id: id, config: config },
       })
